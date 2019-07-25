@@ -9,7 +9,6 @@ def compil_this_file():
     try:
         result = inspect.getouterframes(inspect.currentframe(), 2)
         input_file = str(result[1][1]).split('/')[-1].split('.')[0]  # входной файл
-        print(input_file)
         file_open = open(str(input_file) + ".py")
         be_read = file_open.read()
         create_new_file = open(str(input_file) + ".pyx", "w+")
@@ -104,4 +103,3 @@ def source_this_file():
 #формирование только исходника для любого файла
 def source_any_file():
     delete(compil_any_file())
-
